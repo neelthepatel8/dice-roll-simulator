@@ -35,11 +35,12 @@ def play_game(dices):
     choice = int(input("Your choice: "))
     
     for index, player in enumerate(players):
+        name = players[player]["name"]
         current_dices = players[player]["dice"]
         ans = 0
         for dice in dices:
             ans += dice.roll()
-            print(f"{players[player]["name"]}'s roll: {ans}")
+            print(f"{name}'s roll: {ans}")
         if choice == 2:
             input("Press any key for next roll: ")
             
