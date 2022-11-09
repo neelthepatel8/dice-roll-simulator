@@ -20,7 +20,8 @@ def make_player_dict(num_players, dices):
         name = input(f"Player {num + 1} name: ")
         players[num] = {}
         players[num]["name"] = name
-        players[num]["dice"] = dices[num]
+        players[num]["dice"] = dices
+    return players
         
 def play_game(dices):
     # Ask number of players
@@ -33,7 +34,20 @@ def play_game(dices):
     print("2: Roll After asking") 
     choice = int(input("Your choice: "))
     
-    if choice == 1:
-        rolls = float('inf')
-    else: rolls = 1
+    for index, player in enumerate(players):
+        current_dices = players[player]["dice"]
+        ans = 0
+        for dice in dices:
+            ans += dice.roll()
+            print(f"{players[player]["name"]}'s roll: {ans}")
+        if choice == 2:
+            input("Press any key for next roll: ")
+            
+    print("Round Complete! ")
+    return 
+
+    
+        
+    
+    
        
