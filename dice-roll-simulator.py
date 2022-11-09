@@ -1,5 +1,6 @@
 from Dice import Dice
 from dice_helper import *
+from helper import *
 
 def main():
     
