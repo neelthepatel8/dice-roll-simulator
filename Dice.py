@@ -1,3 +1,5 @@
+from random import randint
+
 class Dice():
     def __init__(self, sides):
         self.sides = sides
@@ -7,3 +9,8 @@ class Dice():
     
     def set_sides(self, sides):
         self.sides = sides
+        
+    # Dice Methods:
+    def roll(self):
+        return randint(1, self.sides)        
+    
