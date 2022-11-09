@@ -1,2 +1,2 @@
-# visa-checker
-Python Visa dates checker for appointments
+# Dice roll simulator
+Python program to simulate dice rolls
