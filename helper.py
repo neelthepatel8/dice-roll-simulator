@@ -23,17 +23,7 @@ def make_player_dict(num_players, dices):
         players[num]["dice"] = dices
     return players
         
-def play_game(dices):
-    # Ask number of players
-    num_players = int(input("Number of players: "))
-    
-    players = make_player_dict(num_players, dices)
-
-    print("How do you want to roll:")
-    print("1: Roll continously")    
-    print("2: Roll After asking") 
-    choice = int(input("Your choice: "))
-    
+def play_round(players, choice):
     for player in players:
         name = players[player]["name"]
         current_dices = players[player]["dice"]
@@ -44,7 +34,23 @@ def play_game(dices):
         if choice == 2:
             input("Press any key for next roll: ")
             
-    print("Round Complete! ")
+def play_game(dices):
+    # Ask number of players
+    num_players = int(input("Number of players: "))
+    
+    players = make_player_dict(num_players, dices)
+
+    print("How do you want to roll each player:")
+    print("1: Roll continously")    
+    print("2: Roll After asking for next player") 
+    choice = int(input("Your choice: "))
+    
+    end = 'y'
+    while end != 'n':
+        play_round(players, choice)
+        print("Round Complete! ")
+        end = input("Play next round? (y/n) ")
+        
     return 
 
     

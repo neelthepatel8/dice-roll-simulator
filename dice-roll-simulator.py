@@ -20,12 +20,10 @@ def start():
     if game_type == 'r':
         ans = roll_all(dices)
         print(f"Your roll is: {ans}")
+        return 
     
-    else:
-        end_game = 'n'
-        while end_game != 'y':
-            play_game(dices)
-            end_game = input("End Game? (y/n) ")
+    play_game(dices)
+        
         
     
 if __name__ == "__main__":
