@@ -24,7 +24,5 @@ def start():
     
     play_game(dices)
         
-        
-    
 if __name__ == "__main__":
     start()
